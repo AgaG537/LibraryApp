@@ -1,7 +1,5 @@
 package com.example;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -12,16 +10,22 @@ import java.util.Scanner;
  */
 public class LibraryManager {
 
-  private static final List<Member> members = new ArrayList<>();
-
   /**
    * Main method enabling the library's management.
    *
    * @param args user's command line arguments
    */
-  public static void main(String[] args) {
-    Library library = new Library();
-    Scanner scanner = new Scanner(System.in);
+  public static void main(final String[] args) {
+    final Library library = new Library();
+    final Scanner scanner = new Scanner(System.in);
+    BookInfo book;
+    String title;
+    String author;
+    String firstName;
+    String secondName;
+    String bookId;
+    String memberId;
+    Member member;
 
     System.out.println("Welcome to the Library System");
     while (true) {
@@ -33,41 +37,41 @@ public class LibraryManager {
       System.out.println("5. Exit");
       System.out.println("-------------------------");
       System.out.print("Choose an option: ");
-      int option = scanner.nextInt();
+      final int option = scanner.nextInt();
       scanner.nextLine(); // Consume newline
 
       switch (option) {
         case 1:
           System.out.print("Enter book title: ");
-          String title = scanner.nextLine();
+          title = scanner.nextLine();
           System.out.print("Enter book author: ");
-          String author = scanner.nextLine();
+          author = scanner.nextLine();
           System.out.print("Enter book ID: ");
-          String id = scanner.nextLine();
-          Book book = new Book(title, author, id);
+          bookId = scanner.nextLine();
+          book = new BookInfo(title, author, bookId);
           library.addBook(book);
           System.out.println("Book added successfully.");
           break;
         case 2:
           System.out.println("Books in the library:");
-          for (Book b : library.getBooks()) {
+          for (final BookInfo b : library.getBooks()) {
             System.out.println("\"" + b.getTitle() + "\", " + b.getAuthor() + ", ID: " + b.getId());
           }
           break;
         case 3:
           System.out.print("Enter member first name: ");
-          String firstName = scanner.nextLine();
+          firstName = scanner.nextLine();
           System.out.print("Enter member second name: ");
-          String secondName = scanner.nextLine();
+          secondName = scanner.nextLine();
           System.out.print("Enter member ID: ");
-          String memberId = scanner.nextLine();
-          Member member = new Member(firstName, secondName, memberId);
-          members.add(member);
+          memberId = scanner.nextLine();
+          member = new Member(firstName, secondName, memberId);
+          library.addMember(member);
           System.out.println("Member added successfully.");
           break;
         case 4:
           System.out.println("Members in the library:");
-          for (Member m : members) {
+          for (final Member m : library.getMembers()) {
             System.out.println(m.getName() + ", ID: " + m.getMemberId());
           }
           break;

@@ -7,22 +7,52 @@ import java.util.List;
  * Class for listing all books in a library.
  */
 public class Library {
-  private final List<Book> books;
+  /** book list. */
+  private final List<BookInfo> books;
+  /** member list. */
+  private final List<Member> members;
 
   /**
    * Constructor for Library class.
    */
   public Library() {
     books = new ArrayList<>();
+    members = new ArrayList<>();
   }
 
-  //adding a book
-  public void addBook(Book book) {
+  /**
+   * Method for adding a book.
+   *
+   * @param book book info
+   */
+  public void addBook(final BookInfo book) {
     books.add(book);
   }
 
-  //listing all books
-  public List<Book> getBooks() {
+  /**
+   * Method for displaying all books.
+   *
+   * @return book list
+   */
+  public List<BookInfo> getBooks() {
     return books;
+  }
+
+  /**
+   * Method for adding a member.
+   *
+   * @param member member's info
+   */
+  public void addMember(final Member member) {
+    members.add(member);
+  }
+
+  /**
+   * Method for displaying all members.
+   *
+   * @return members list
+   */
+  public List<Member> getMembers() {
+    return members;
   }
 }
