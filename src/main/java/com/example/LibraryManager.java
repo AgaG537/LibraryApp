@@ -10,6 +10,7 @@ import java.util.Scanner;
  */
 public class LibraryManager {
 
+
   /**
    * Main method enabling the library's management.
    *
@@ -55,7 +56,8 @@ public class LibraryManager {
         case 2:
           System.out.println("Books in the library:");
           for (final BookInfo b : library.getBooks()) {
-            System.out.println("\"" + b.getTitle() + "\", " + b.getAuthor() + ", ID: " + b.getId());
+            System.out.println("\"" + b.getTitle() + "\", "
+                + b.getAuthor() + ", ID: " + b.getId());
           }
           break;
         case 3:
