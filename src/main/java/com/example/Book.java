@@ -6,19 +6,19 @@ package com.example;
 public class Book {
   private String title;
   private String author;
-  private String isbn;
+  private String id;
 
   /**
    * Constructor for Book class.
    *
    * @param title book title
    * @param author book author
-   * @param isbn book number
+   * @param id book id
    */
-  public Book(String title, String author, String isbn) {
+  public Book(String title, String author, String id) {
     setTitle(title);
     setAuthor(author);
-    setIsbn(isbn);
+    setId(id);
   }
 
   //getting title
@@ -42,12 +42,12 @@ public class Book {
   }
 
   //getting isbn
-  public String getIsbn() {
-    return isbn;
+  public String getId() {
+    return id;
   }
 
   //setting isbn
-  public void setIsbn(String isbn) {
-    this.isbn = isbn;
+  public void setId(String id) {
+    this.id = id;
   }
 }

@@ -42,16 +42,16 @@ public class LibraryManager {
           String title = scanner.nextLine();
           System.out.print("Enter book author: ");
           String author = scanner.nextLine();
-          System.out.print("Enter book ISBN: ");
-          String isbn = scanner.nextLine();
-          Book book = new Book(title, author, isbn);
+          System.out.print("Enter book ID: ");
+          String id = scanner.nextLine();
+          Book book = new Book(title, author, id);
           library.addBook(book);
           System.out.println("Book added successfully.");
           break;
         case 2:
           System.out.println("Books in the library:");
           for (Book b : library.getBooks()) {
-            System.out.println("\"" + b.getTitle() + "\", " + b.getAuthor() + ", " + b.getIsbn());
+            System.out.println("\"" + b.getTitle() + "\", " + b.getAuthor() + ", ID: " + b.getId());
           }
           break;
         case 3:
@@ -59,7 +59,7 @@ public class LibraryManager {
           String firstName = scanner.nextLine();
           System.out.print("Enter member second name: ");
           String secondName = scanner.nextLine();
-          System.out.print("Enter member id: ");
+          System.out.print("Enter member ID: ");
           String memberId = scanner.nextLine();
           Member member = new Member(firstName, secondName, memberId);
           members.add(member);
@@ -68,7 +68,7 @@ public class LibraryManager {
         case 4:
           System.out.println("Members in the library:");
           for (Member m : members) {
-            System.out.println(m.getName() + ", " + m.getMemberId());
+            System.out.println(m.getName() + ", ID: " + m.getMemberId());
           }
           break;
         case 5:
