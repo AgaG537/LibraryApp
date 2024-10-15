@@ -4,11 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Class for managing library.
+ * It enables librarian to:
+ * 1. add new book or member
+ * 2. list all books or members
+ */
 public class LibraryManager {
 
   private static final List<Member> members = new ArrayList<>();
-  private static Integer memberIdCounter = 1;
 
+  /**
+   * Main method enabling the library's management.
+   *
+   * @param args user's command line arguments
+   */
   public static void main(String[] args) {
     Library library = new Library();
     Scanner scanner = new Scanner(System.in);
@@ -41,7 +51,7 @@ public class LibraryManager {
         case 2:
           System.out.println("Books in the library:");
           for (Book b : library.getBooks()) {
-            System.out.println("Title: " + b.getTitle() + ", Author: " + b.getAuthor() + ", ISBN: " + b.getIsbn());
+            System.out.println("\"" + b.getTitle() + "\", " + b.getAuthor() + ", " + b.getIsbn());
           }
           break;
         case 3:
@@ -49,7 +59,8 @@ public class LibraryManager {
           String firstName = scanner.nextLine();
           System.out.print("Enter member second name: ");
           String secondName = scanner.nextLine();
-          Integer memberId = memberIdCounter++;
+          System.out.print("Enter member id: ");
+          String memberId = scanner.nextLine();
           Member member = new Member(firstName, secondName, memberId);
           members.add(member);
           System.out.println("Member added successfully.");
@@ -57,7 +68,7 @@ public class LibraryManager {
         case 4:
           System.out.println("Members in the library:");
           for (Member m : members) {
-            System.out.println("Name: " + m.getName() + ", Member ID: " + m.getMemberId());
+            System.out.println(m.getName() + ", " + m.getMemberId());
           }
           break;
         case 5:

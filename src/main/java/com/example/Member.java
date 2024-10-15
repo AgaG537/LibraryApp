@@ -1,33 +1,39 @@
 package com.example;
 
+/**
+ * Class for members' details.
+ */
 public class Member {
   private String firstName;
   private String secondName;
-  private Integer memberId;
+  private String memberId;
 
-  public Member(String firstName, String secondName, Integer memberId) {
+  /**
+   * Constructor for Member class.
+   */
+  public Member(String firstName, String secondName, String memberId) {
     setName(firstName, secondName);
     setMemberId(memberId);
   }
 
-  // Getter for name
+  //getting name
   public String getName() {
     return firstName + " " + secondName;
   }
 
-  // Setter for name
+  //setting name
   public void setName(String firstName, String secondName) {
     this.firstName = firstName;
     this.secondName = secondName;
   }
 
-  // Getter for memberId
-  public Integer getMemberId() {
+  //getting memberId
+  public String getMemberId() {
     return memberId;
   }
 
-  // Setter for memberId
-  public void setMemberId(Integer memberId) {
+  //setting memberId
+  public void setMemberId(String memberId) {
     this.memberId = memberId;
   }
 }

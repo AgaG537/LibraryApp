@@ -1,42 +1,52 @@
 package com.example;
 
+/**
+ * Class for saving books' details.
+ */
 public class Book {
   private String title;
   private String author;
   private String isbn;
 
+  /**
+   * Constructor for Book class.
+   *
+   * @param title book title
+   * @param author book author
+   * @param isbn book number
+   */
   public Book(String title, String author, String isbn) {
     setTitle(title);
     setAuthor(author);
     setIsbn(isbn);
   }
 
-  // Getter for title
+  //getting title
   public String getTitle() {
     return title;
   }
 
-  // Setter for title
+  //setting title
   public void setTitle(String title) {
     this.title = title;
   }
 
-  // Getter for author
+  //getting author
   public String getAuthor() {
     return author;
   }
 
-  // Setter for author
+  //setting author
   public void setAuthor(String author) {
     this.author = author;
   }
 
-  // Getter for isbn
+  //getting isbn
   public String getIsbn() {
     return isbn;
   }
 
-  // Setter for isbn
+  //setting isbn
   public void setIsbn(String isbn) {
     this.isbn = isbn;
   }
