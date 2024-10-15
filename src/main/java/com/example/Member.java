@@ -6,9 +6,8 @@ public class Member {
   private Integer memberId;
 
   public Member(String firstName, String secondName, Integer memberId) {
-    this.firstName = firstName;
-    this.secondName = secondName;
-    this.memberId = memberId;
+    setName(firstName, secondName);
+    setMemberId(memberId);
   }
 
   // Getter for name
