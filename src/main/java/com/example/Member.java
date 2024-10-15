@@ -1,31 +1,34 @@
 package com.example;
 
 public class Member {
-  private String name;
-  private String memberId;
+  private String firstName;
+  private String secondName;
+  private Integer memberId;
 
-  public Member(String name, String memberId) {
-    this.name = name;
+  public Member(String firstName, String secondName, Integer memberId) {
+    this.firstName = firstName;
+    this.secondName = secondName;
     this.memberId = memberId;
   }
 
   // Getter for name
   public String getName() {
-    return name;
+    return firstName + " " + secondName;
   }
 
   // Setter for name
-  public void setName(String name) {
-    this.name = name;
+  public void setName(String firstName, String secondName) {
+    this.firstName = firstName;
+    this.secondName = secondName;
   }
 
   // Getter for memberId
-  public String getMemberId() {
+  public Integer getMemberId() {
     return memberId;
   }
 
   // Setter for memberId
-  public void setMemberId(String memberId) {
+  public void setMemberId(Integer memberId) {
     this.memberId = memberId;
   }
 }

@@ -6,7 +6,8 @@ import java.util.Scanner;
 
 public class LibraryManager {
 
-  private static List<Member> members = new ArrayList<>();
+  private static final List<Member> members = new ArrayList<>();
+  private static Integer memberIdCounter = 1;
 
   public static void main(String[] args) {
     Library library = new Library();
@@ -14,11 +15,13 @@ public class LibraryManager {
 
     System.out.println("Welcome to the Library System");
     while (true) {
+      System.out.println("----Available options----");
       System.out.println("1. Add a book");
       System.out.println("2. Display all books");
       System.out.println("3. Add a member");
       System.out.println("4. Display all members");
       System.out.println("5. Exit");
+      System.out.println("-------------------------");
       System.out.print("Choose an option: ");
       int option = scanner.nextInt();
       scanner.nextLine(); // Consume newline
@@ -42,11 +45,12 @@ public class LibraryManager {
           }
           break;
         case 3:
-          System.out.print("Enter member name: ");
-          String name = scanner.nextLine();
-          System.out.print("Enter member ID: ");
-          String memberId = scanner.nextLine();
-          Member member = new Member(name, memberId);
+          System.out.print("Enter member first name: ");
+          String firstName = scanner.nextLine();
+          System.out.print("Enter member second name: ");
+          String secondName = scanner.nextLine();
+          Integer memberId = memberIdCounter++;
+          Member member = new Member(firstName, secondName, memberId);
           members.add(member);
           System.out.println("Member added successfully.");
           break;
