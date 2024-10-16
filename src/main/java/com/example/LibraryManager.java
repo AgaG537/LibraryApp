@@ -10,7 +10,6 @@ import java.util.Scanner;
  */
 public class LibraryManager {
 
-
   /**
    * Main method enabling the library's management.
    *
